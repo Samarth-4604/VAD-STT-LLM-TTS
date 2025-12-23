@@ -1,0 +1,18 @@
+voices:
+  en:
+    model: "en_US-lessac-medium"
+    language_code: "en"
+  ml:
+    model: "ml_IN-meera-medium"
+    language_code: "ml"
+  ar:
+    model: "ar_JO-kareem-medium"
+    language_code: "ar"
+
+audio:
+  sample_rate: 22050
+
+paths:
+  models_dir: "models"
+
+default_language: "en"

@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+penv/
+*.wav
+*.mp3
+models/
+.DS_Store
+*.log
+*.onnx
+*.onnx.json

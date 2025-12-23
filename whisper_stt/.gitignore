@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+stt_env/
+venv/
+.env/
+
+# Audio
+*.wav
+*.mp3
+
+# Caches
+.cache/
+.cache/**
+**/.cache/**
+**/torch/**
+**/huggingface/**
+
+# Temp
+vad_input.wav
+live_input.wav
+
+# OS
+.DS_Store
