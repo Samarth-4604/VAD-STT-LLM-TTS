@@ -1,3 +1,16 @@
+## 🏗 Architecture Overview
+
+The system follows a sequential pipeline to process voice and generate speech:
+
+```mermaid
+graph TD
+    A[Microphone] --> B[Silero VAD]
+    B --> C[Hybrid STT: Whisper + IndicSTT]
+    C --> D[Qwen LLM: Streaming Output]
+    D --> E[Piper TTS: Sentence-level Speech]
+
+
+
 ## Model Setup (Required)
 
 This repository does not include model weights.
@@ -17,6 +30,29 @@ https://huggingface.co/rhasspy/piper-voices
 
 Place voices under:
 models/tts/piper/
+
+
+
+
+
+
+## Configuration
+The primary configuration file is located at: whisper_stt/config/config.yaml
+
+This file controls:
+
+Audio Parameters: Sample rate, channels, etc.
+
+Model Selection: Choose specific Whisper or IndicSTT versions.
+
+Language Routing: Logic for handling English vs. Malayalam.
+
+[!IMPORTANT]
+
+Not all configuration fields are active in the current CPU-only mode. Some options are reserved for future GPU-enabled operation.
+
+
+
 
 
 
@@ -42,3 +78,27 @@ To enable GPU execution, the following changes are required:
 This design prevents accidental CUDA out-of-memory errors and makes
 GPU usage an explicit, deliberate choice.
 
+
+
+
+## Installation & Usage
+
+# Create a virtual environment
+python -m venv venv
+
+# Activate environment (Linux/macOS)
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+
+
+
+
+##Running the Assistant
+python run_teacherbot_voice.py
+
+Interact: Speak naturally into the microphone.
+
+Exit: Press Ctrl+C.
