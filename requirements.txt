@@ -1,0 +1,22 @@
+# Core
+torch
+transformers
+accelerate
+numpy
+
+# STT
+openai-whisper
+onnxruntime
+sounddevice
+silero-vad
+
+# TTS
+piper-tts
+
+# Audio utils
+scipy
+soundfile
+
+# Optional / helpful
+tqdm
+pyyaml
