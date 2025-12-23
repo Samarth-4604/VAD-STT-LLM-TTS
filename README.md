@@ -16,7 +16,11 @@ graph TD
 This repository does not include model weights.
 
 ### Qwen LLM
-Download from Hugging Face and place in:
+Download from Hugging Face from:
+```
+https://huggingface.co/Qwen
+```
+And place in:
 models/llm/qwen/
 
 ### Whisper STT
@@ -26,7 +30,9 @@ models/stt/whisper/
 
 ### Piper TTS
 Download voice models from:
+```
 https://huggingface.co/rhasspy/piper-voices
+```
 
 Place voices under:
 models/tts/piper/
@@ -84,21 +90,25 @@ GPU usage an explicit, deliberate choice.
 ## Installation & Usage
 
 # Create a virtual environment
+```
 python -m venv venv
-
+```
 # Activate environment (Linux/macOS)
+```
 source venv/bin/activate
-
+```
 # Install dependencies
+```
 pip install -r requirements.txt
-
+```
 
 
 
 
 ##Running the Assistant
+```
 python run_teacherbot_voice.py
-
+```
 Interact: Speak naturally into the microphone.
 
 Exit: Press Ctrl+C.
