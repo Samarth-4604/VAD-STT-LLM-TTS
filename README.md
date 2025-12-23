@@ -1,4 +1,4 @@
-## 🏗 Architecture Overview
+## Architecture Overview
 
 The system follows a sequential pipeline to process voice and generate speech:
 
@@ -9,7 +9,7 @@ graph TD
     C --> D[Qwen LLM: Streaming Output]
     D --> E[Piper TTS: Sentence-level Speech]
 
-
+```
 
 ## Model Setup (Required)
 
