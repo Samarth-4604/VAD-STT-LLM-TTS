@@ -1,0 +1,44 @@
+# --------------------
+# Python junk
+# --------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --------------------
+# Virtual environments
+# --------------------
+teacher-venv/
+.venv/
+venv/
+
+# --------------------
+# Large / local models (DO NOT UPLOAD)
+# --------------------
+qwen_model_local/
+models/
+text_to_multi_speech/models/
+
+# Model weight formats anywhere
+**/*.safetensors
+**/*.onnx
+**/*.bin
+**/*.pt
+**/*.gguf
+
+# --------------------
+# Audio artifacts
+# --------------------
+*.wav
+*.mp3
+
+# --------------------
+# Logs & temp
+# --------------------
+*.log
+
+# --------------------
+# OS junk
+# --------------------
+.DS_Store
