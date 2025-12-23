@@ -1,7 +1,11 @@
+# NOTE:
+# This system runs in CPU-only mode by default due to VRAM limits.
+# GPU/CUDA support can be enabled by modifying the code
+# in HybridSTT and WhisperSTT.
 model:
   size: "small"
-  device: "cuda"
-  compute_type: "float16"
+  device: "cpu"
+  compute_type: "float32"
   language: null
 
 performance:

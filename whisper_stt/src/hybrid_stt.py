@@ -35,7 +35,9 @@ class HybridSTT:
 
         print("=== Initializing Hybrid STT System (CPU MODE) ===")
 
-        # 🔒 FORCE CPU
+        # 🔒 FORCE CPU MODE
+        # GPU/CUDA support is intentionally disabled by default
+        # due to limited VRAM. Can be enabled by changing this.
         self.device = "cpu"
 
         # Load Whisper ONCE (CPU)
