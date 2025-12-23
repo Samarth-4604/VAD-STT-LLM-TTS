@@ -14,10 +14,11 @@ graph TD
 ##Clone the files from git
 ```
 git clone https://github.com/Samarth-4604/VAD-STT-LLM-TTS.git
+cd VAD-STT-LLM-TTS/
 ```
 # Create a virtual environment
 ```
-python -m venv venv
+python3 -m venv venv
 ```
 # Activate environment
 ```
