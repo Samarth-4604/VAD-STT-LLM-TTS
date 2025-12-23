@@ -11,6 +11,22 @@ graph TD
 
 ```
 
+##Clone the files from git
+```
+git clone https://github.com/Samarth-4604/VAD-STT-LLM-TTS.git
+```
+# Create a virtual environment
+```
+python -m venv venv
+```
+# Activate environment
+```
+source venv/bin/activate
+```
+# Install dependencies
+```
+pip install -r requirements.txt
+```
 ## Model Setup (Required)
 
 This repository does not include model weights.
@@ -20,8 +36,17 @@ Download from Hugging Face from:
 ```
 https://huggingface.co/Qwen
 ```
-And place in:
-models/llm/qwen/
+And place it inside the folder named qwen:
+```
+mkdir -p models/llm/qwen
+cd models/llm/qwen
+```
+After this, your folder should contain files like:
+config.json
+model.safetensors
+tokenizer.json
+tokenizer.model
+
 
 ### Whisper STT
 Models are downloaded automatically on first run.
