@@ -11,17 +11,12 @@ graph TD
 
 ```
 
-##Clone the files from git
+##Clone the files from git, install and activate venv
 ```
 git clone https://github.com/Samarth-4604/VAD-STT-LLM-TTS.git
 cd VAD-STT-LLM-TTS/
-```
-# Create a virtual environment
-```
+sudo apt install python3-venv
 python3 -m venv venv
-```
-# Activate environment
-```
 source venv/bin/activate
 ```
 # Install dependencies
@@ -32,16 +27,25 @@ pip install -r requirements.txt
 
 This repository does not include model weights.
 
-### Qwen LLM
+### Qwen LLM download and placement
 Download from Hugging Face from:
 ```
-https://huggingface.co/Qwen
+https://huggingface.co/Qwen/Qwen2.5-3B
 ```
-And place it inside the folder named qwen:
 ```
-mkdir -p models/llm/qwen
-cd models/llm/qwen
+sudo apt update && sudo apt install git-lfs -y
+git lfs install
+cd ~/VAD-STT-LLM-TTS/Qwen2.5-3B
+git lfs pull
+mkdir -p ~/VAD-STT-LLM-TTS/models/llm/qwen
+cd ~/VAD-STT-LLM-TTS
+rm -rf Qwen2.5-3B
+echo "Download and move complete! Checking file sizes..."
+ls -lh ~/VAD-STT-LLM-TTS/models/llm/qwen/
 ```
+
+note: qwen 3b is weak in malayalam it is used here due to low vram, i reccomend using 4b or 8b models.
+
 After this, your folder should contain files like:
 config.json
 model.safetensors
