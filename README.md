@@ -28,20 +28,15 @@ pip install -r requirements.txt
 This repository does not include model weights.
 
 ### Qwen LLM download and placement
-Download from Hugging Face from:
-```
-https://huggingface.co/Qwen/Qwen2.5-3B
-```
+Download from Hugging Face from (this might take a while to download):
 ```
 sudo apt update && sudo apt install git-lfs -y
 git lfs install
-cd ~/VAD-STT-LLM-TTS/Qwen2.5-3B
-git lfs pull
-mkdir -p ~/VAD-STT-LLM-TTS/models/llm/qwen
-cd ~/VAD-STT-LLM-TTS
-rm -rf Qwen2.5-3B
-echo "Download and move complete! Checking file sizes..."
-ls -lh ~/VAD-STT-LLM-TTS/models/llm/qwen/
+mkdir -p models/llm/qwen
+cd models/llm/qwen
+git init
+git remote add origin [https://huggingface.co/Qwen/Qwen2.5-3B](https://huggingface.co/Qwen/Qwen2.5-3B)
+git pull origin main
 ```
 
 note: qwen 3b is weak in malayalam it is used here due to low vram, i reccomend using 4b or 8b models.
@@ -61,7 +56,20 @@ models/stt/whisper/
 ### Piper TTS
 Download voice models from:
 ```
-https://huggingface.co/rhasspy/piper-voices
+# Navigate to project root
+cd ~/VAD-STT-LLM-TTS
+
+# Create the specific Piper directory
+mkdir -p models/tts/piper
+cd models/tts/piper
+# Download ONNX model and Config
+wget https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/amy/medium/en_US-amy-medium.onnx
+wget https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/amy/medium/en_US-amy-medium.onnx.json
+# Download Malayalam ONNX and JSON
+wget "https://huggingface.co/rhasspy/piper-voices/resolve/v1.0.0/ml/ml_IN/meera/medium/ml_IN-meera-medium.onnx"
+wget "https://huggingface.co/rhasspy/piper-voices/resolve/v1.0.0/ml/ml_IN/meera/medium/ml_IN-meera-medium.onnx.json"
+#verify
+ls -lh
 ```
 
 Place voices under:
